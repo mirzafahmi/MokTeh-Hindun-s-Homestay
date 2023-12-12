@@ -1,0 +1,128 @@
+[
+  {
+    "id": "1",
+    "name": "rumah_kayu",
+    "address": "Alamat",
+    "coordinate": "",
+    "pricing": 200,
+    "specs": {
+      "room": [
+        {
+          "room_number": "1",
+          "bed_size": "Queen Size",
+          "bed_number": 1,
+          "bath_room_inside": false
+        },
+        {
+          "room_number": "2",
+          "bed_size": "Queen Size",
+          "bed_number": 1,
+          "bath_room_inside": false
+        },
+        {
+          "room_number": "3",
+          "bed_size": "Single Size",
+          "bed_number": 2,
+          "bath_room_inside": false
+        }
+      ],
+      "bathroom": 2,
+      "kitchen": true,
+      "fridge": true,
+      "washing_machine": true,
+      "iron": true,
+      "kettle": true
+    },
+    "picture": [
+      "/media/rumah_kayu/exterior-1.jpg",
+      "/media/rumah_kayu/exterior-2.jpg",
+      "/media/rumah_kayu/interior-1.jpg",
+      "/media/rumah_kayu/interior-2.jpg",
+      "/media/rumah_kayu/interior-3.jpg"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "rumah_batu",
+    "address": "Alamat",
+    "coordinate": "",
+    "pricing": 200,
+    "specs": {
+      "room": [
+        {
+          "room_number": "1",
+          "bed_size": "Queen Size",
+          "bed_number": 1,
+          "bath_room_inside": false
+        },
+        {
+          "room_number": "2",
+          "bed_size": "Queen Size",
+          "bed_number": 1,
+          "bath_room_inside": false
+        },
+        {
+          "room_number": "3",
+          "bed_size": "Single Size",
+          "bed_number": 2,
+          "bath_room_inside": false
+        }
+      ],
+      "bathroom": 2,
+      "kitchen": true,
+      "fridge": true,
+      "washing_machine": true,
+      "iron": true,
+      "kettle": true
+    },
+    "picture": [
+      "/media/rumah_batu/exterior-1.jpg",
+      "/media/rumah_batu/exterior-2.jpg",
+      "/media/rumah_batu/interior-1.jpg",
+      "/media/rumah_batu/interior-2.jpg",
+      "/media/rumah_batu/interior-3.jpg"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "rumah_kecik",
+    "address": "Alamat",
+    "coordinate": "",
+    "pricing": 200,
+    "specs": {
+      "room": [
+        {
+          "room_number": "1",
+          "bed_size": "Queen Size",
+          "bed_number": 1,
+          "bath_room_inside": false
+        },
+        {
+          "room_number": "2",
+          "bed_size": "Queen Size",
+          "bed_number": 1,
+          "bath_room_inside": false
+        },
+        {
+          "room_number": "3",
+          "bed_size": "Single Size",
+          "bed_number": 2,
+          "bath_room_inside": false
+        }
+      ],
+      "bathroom": 2,
+      "kitchen": true,
+      "fridge": true,
+      "washing_machine": true,
+      "iron": true,
+      "kettle": true
+    },
+    "picture": [
+      "/media/rumah_kecik/exterior-1.jpg",
+      "/media/rumah_kecik/exterior-2.jpg",
+      "/media/rumah_kecik/interior-1.jpg",
+      "/media/rumah_kecik/interior-2.jpg",
+      "/media/rumah_kecik/interior-3.jpg"
+    ]
+  }
+]
