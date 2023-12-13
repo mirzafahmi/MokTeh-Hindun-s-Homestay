@@ -4,6 +4,7 @@ from models.models import db, AdminUser, BookedDate
 from views.admin_views import admin_views
 from flask_admin import Admin, expose, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
+from flask_cors import CORS
 import os
 
 admin = Admin()
@@ -24,11 +25,11 @@ class MyAdminIndexView(AdminIndexView):
 
 admin = Admin(index_view=MyAdminIndexView())
 
-admin.add_view(ModelView(AdminUser, db.session))
 admin.add_view(ModelView(BookedDate, db.session))
 
 def create_app():
     app = Flask(__name__)
+    CORS(app)
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
     app.config['SECRET_KEY'] = b'5473D5711462A31425AC9685C3EA6'
