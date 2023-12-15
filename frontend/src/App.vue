@@ -1,23 +1,14 @@
 <script setup>
-import AppWelcome from "./components/AppWelcome.vue";
-
-
+import AppNavbar from "./components/AppNavbar.vue";
 </script>
 
 <template>
-  <AppNavbar></AppNavbar>
-  <AppWelcome></AppWelcome>
+  <AppNavbar />
+  <div id="router-view-main">
+    <router-view />
+  </div>
+  
 </template>
-
-<script>
-import AppNavbar from "./components/AppNavbar.vue";
-
-export default {
-  components: {
-    AppNavbar,
-  },
-};
-</script>
 
 <style>
 :root {
@@ -27,6 +18,11 @@ export default {
   --secondary-shade: #A6E3E9;
   --accent: #71C9CE;
   --accent-shade: #65bbc0;
+  --navbar: 56px;
+}
+
+#router-view-main {
+  margin-top: var(--navbar);
 }
 /*
 #app {
@@ -37,12 +33,5 @@ export default {
   color: #2c3e50;
 }*/
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

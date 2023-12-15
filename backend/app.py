@@ -5,6 +5,7 @@ from views.admin_views import admin_views
 from flask_admin import Admin, expose, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 from flask_cors import CORS
+from flask_migrate import Migrate
 import os
 
 admin = Admin()
@@ -48,6 +49,7 @@ def create_app():
 
     db.init_app(app)
     admin.init_app(app)
+    migrate = Migrate(app, db)
     
     with app.app_context():
         db.create_all()

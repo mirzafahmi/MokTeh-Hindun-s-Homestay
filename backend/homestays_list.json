@@ -5,6 +5,7 @@
     "address": "Alamat",
     "coordinate": "",
     "pricing": 200,
+    "pax": "6 to 8",
     "specs": {
       "room": [
         {
@@ -46,7 +47,8 @@
     "name": "rumah_batu",
     "address": "Alamat",
     "coordinate": "",
-    "pricing": 200,
+    "pricing": 180,
+    "pax": "5 to 7",
     "specs": {
       "room": [
         {
@@ -71,8 +73,8 @@
       "bathroom": 2,
       "kitchen": true,
       "fridge": true,
-      "washing_machine": true,
-      "iron": true,
+      "washing_machine": false,
+      "iron": false,
       "kettle": true
     },
     "picture": [
@@ -88,7 +90,8 @@
     "name": "rumah_kecik",
     "address": "Alamat",
     "coordinate": "",
-    "pricing": 200,
+    "pricing": 150,
+    "pax": "2 to 3",
     "specs": {
       "room": [
         {
@@ -111,10 +114,10 @@
         }
       ],
       "bathroom": 2,
-      "kitchen": true,
+      "kitchen": false,
       "fridge": true,
       "washing_machine": true,
-      "iron": true,
+      "iron": false,
       "kettle": true
     },
     "picture": [

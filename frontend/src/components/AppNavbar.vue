@@ -1,25 +1,11 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import Axios from 'axios';
 
-const responseData = ref(null);
-
-onMounted(async () => {
-  try {
-    const path = 'http://127.0.0.1:5000/';
-    const res = await Axios.get(path);
-    responseData.value = res.data;
-    console.log(res.data)
-  } catch (error) {
-    console.error(error);
-  }
-});
 </script>
 
 <template>
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Mokteh Hindun™</a>
+      <a class="navbar-brand">Mokteh Hindun™</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -34,7 +20,7 @@ onMounted(async () => {
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link class="nav-link" to="/">Home</router-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -53,7 +39,7 @@ onMounted(async () => {
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Place to Visit</a>
+            <router-link class="nav-link" to="/visit">Visit</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact Us</a>
