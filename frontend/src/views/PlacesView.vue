@@ -1,5 +1,15 @@
 <script setup>
 import AppVisitCard from './../components/AppVisitCard.vue';
+import { useHouseStore } from '@/store/houseStore';
+import { ref, onMounted } from 'vue';
+
+const houseStore = useHouseStore();
+const houseDetails = ref(null);
+
+onMounted(async () => {
+    await houseStore.fetchHouseDetails();
+    houseDetails.value = houseStore.houseDetails;
+});
 </script>
 
 <template>

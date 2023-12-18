@@ -38,7 +38,31 @@ def data():
     with open('homestays_list.json', 'r') as f:
         data = json.load(f)
 
-    return jsonify(data)
+    # Fetch booked dates from the database
+    booked_dates = BookedDate.query.all()
+
+    # Create a dictionary to store booked dates by house name
+    booked_dates_by_house = {}
+    for booked_date in booked_dates:
+        house_name = booked_date.house.name  # Assuming 'name' is the field in 'House' model
+        if house_name not in booked_dates_by_house:
+            booked_dates_by_house[house_name] = []
+
+        booked_dates_by_house[house_name].append({
+            "from_book_date": booked_date.from_book_date,
+            "to_book_date": booked_date.to_book_date,
+        })
+
+    # Append booked dates to each house in the data
+    for house in data:
+        house_name = house.get('name', '')
+        house['booked_dates'] = booked_dates_by_house.get(house_name, [])
+
+    combined_data = {
+        "house_details": data,
+    }
+    
+    return jsonify(combined_data)
 
 @admin_views.route('/media/<house_folder>/<path:filename>')
 def media(house_folder, filename):

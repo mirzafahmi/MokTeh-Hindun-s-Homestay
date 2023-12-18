@@ -7,6 +7,7 @@ from flask_admin.contrib.sqla import ModelView
 from flask_cors import CORS
 from flask_migrate import Migrate
 import os
+from sqlalchemy import func
 
 admin = Admin()
 
@@ -24,9 +25,14 @@ class MyAdminIndexView(AdminIndexView):
     def inaccessible_callback(self, name, **kwargs):
         return redirect(url_for('admin_views.admin_login'))
 
+class MyModelView(ModelView):
+    column_default_sort = ('from_book_date', True)
+    column_sortable_list = ['from_book_date', 'to_book_date', 'client_name']  # Add the columns you want to make sortable
+    column_searchable_list = ['client_name']
+
 admin = Admin(index_view=MyAdminIndexView())
 
-admin.add_view(ModelView(BookedDate, db.session))
+admin.add_view(MyModelView(BookedDate, db.session))
 
 def create_app():
     app = Flask(__name__)

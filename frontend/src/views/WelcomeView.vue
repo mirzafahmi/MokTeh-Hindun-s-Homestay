@@ -1,23 +1,18 @@
 <script setup>
 import AppHouseCard from './../components/AppHouseCard.vue';
+import { useHouseStore } from '@/store/houseStore';
 import { ref, onMounted } from 'vue';
-import Axios from 'axios';
 
-const responseData = ref(null);
+const houseStore = useHouseStore();
+const houseDetails = ref(null);
 
 const transformName = (name) => {
   return name.replace(/_/g, ' ').replace(/\b\w/g, (match) => match.toUpperCase());
 };
 
 onMounted(async () => {
-  try {
-    const path = 'http://127.0.0.1:5000/';
-    const res = await Axios.get(path);
-      responseData.value = res.data;
-    console.log(res.data[0].specs.room.length)
-  } catch (error) {
-    console.error(error);
-  }
+    await houseStore.fetchHouseDetails();
+    houseDetails.value = houseStore.houseDetails;
 });
 </script>
 
@@ -68,9 +63,9 @@ onMounted(async () => {
         <div id="page-3">
             <div class="container">
                 <h1 class="title text-center pt-5">Here are the list of our homestay</h1>
-                <div id="card-list" class="row w-100" v-if="responseData">
+                <div id="card-list" class="row w-100" v-if="houseDetails">
                     <AppHouseCard 
-                    v-for="(item, index) in responseData"
+                    v-for="(item, index) in houseDetails"
                     :key="index"
                     :houseName="transformName(item.name)"
                     :housePax="item.pax"
