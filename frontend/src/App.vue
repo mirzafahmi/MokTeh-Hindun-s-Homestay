@@ -3,11 +3,12 @@ import AppNavbar from "./components/AppNavbar.vue";
 </script>
 
 <template>
-  <AppNavbar />
-  <div id="router-view-main">
-    <router-view />
-  </div>
-  <v-footer></v-footer>
+  <v-app class="hidden">
+    <AppNavbar />
+    <div id="router-view-main">
+      <router-view />
+    </div>
+  </v-app>
 </template>
 
 <style>
@@ -24,6 +25,7 @@ import AppNavbar from "./components/AppNavbar.vue";
 #router-view-main {
   margin-top: var(--navbar);
 }
+
 /*
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -2,6 +2,7 @@
 import { defineProps } from 'vue';
 
 const props = defineProps([
+	'houseUrl',
 	'houseName',
 	'houseRecommendation',
 	'housePax',
@@ -21,7 +22,14 @@ const props = defineProps([
 		<li class="booking-card" style="background-image: url(https://images.unsplash.com/photo-1532509854226-a2d9d8e66f8e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);">
 			<div class="book-container">
 			<div class="content">
-				<button class="btn">View Details</button>
+				<button class="btn">
+					<router-link 
+					class="nav-link" 
+					:to="props.houseUrl"
+					>
+						View Details
+					</router-link>
+				</button>
 			</div>
 			</div>
 			<div class="informations-container">
@@ -42,9 +50,7 @@ const props = defineProps([
 				</svg>
 				From {{props.housePax}} pax
 			</p>
-			<hr>
 			<div class="specs">
-				<p>Specs:</p>
 				<div class="row">
 					<p class="price col">
 						<svg class="icon" data-name="Layer 1" id="Layer_1" style="width:24px;height:24px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -166,7 +172,7 @@ const props = defineProps([
 }
  ul .booking-card {
 	 position: relative;
-	 height: 570px;
+	 height: 590px;
 	 width: 300px;
 	 margin-bottom: 20px;
 	 display: flex;
