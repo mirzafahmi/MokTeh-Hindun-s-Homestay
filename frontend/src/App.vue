@@ -7,7 +7,7 @@ import AppNavbar from "./components/AppNavbar.vue";
   <div id="router-view-main">
     <router-view />
   </div>
-  
+  <v-footer></v-footer>
 </template>
 
 <style>
