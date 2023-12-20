@@ -6,7 +6,7 @@ import AppNavbar from "./components/AppNavbar.vue";
   <v-app class="hidden">
     <AppNavbar />
     <div id="router-view-main">
-      <router-view />
+      <router-view :key="$route.fullPath"/>
     </div>
   </v-app>
 </template>
@@ -26,6 +26,13 @@ import AppNavbar from "./components/AppNavbar.vue";
   margin-top: var(--navbar);
 }
 
+.custom-divider {
+  margin:2px
+}
+
+.custom-margin {
+  margin: 0px
+}
 /*
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from './router/index.js';
 import { createPinia } from 'pinia';
 import './../node_modules/@fortawesome/fontawesome-free/css/all.css';
+import "@mdi/font/css/materialdesignicons.css";
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'

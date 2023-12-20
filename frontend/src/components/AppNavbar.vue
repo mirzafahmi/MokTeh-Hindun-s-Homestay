@@ -6,6 +6,10 @@ const route = useRoute();
 function isRoute(path) {
   return route.path === path;
 }
+
+function isDropdownActive(routes) {
+  return routes.some((route) => isRoute(route));
+}
 </script>
 
 <template>
@@ -37,17 +41,38 @@ function isRoute(path) {
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle custom-dropdown-link"
-              href="#"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
+              :class="{ active: isDropdownActive(['/rumah_kayu', '/rumah_batu', '/rumah_kecik']) }"
             >
               Homestays List
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <router-link 
+                class="dropdown-item" 
+                to="/rumah_kayu"
+                >
+                  Rumah Kayu
+                </router-link>
+              </li>
+              <li>
+                <router-link 
+                class="dropdown-item" 
+                to="/rumah_batu"
+                >
+                  Rumah Batu
+                </router-link>
+              </li>
+              <li>
+                <router-link 
+                class="dropdown-item" 
+                to="/rumah_kecik"
+                >
+                  Rumah Kecik
+                </router-link>
+              </li>
             </ul>
           </li>
           <li class="nav-item">

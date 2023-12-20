@@ -22,14 +22,12 @@ const props = defineProps([
 		<li class="booking-card" style="background-image: url(https://images.unsplash.com/photo-1532509854226-a2d9d8e66f8e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);">
 			<div class="book-container">
 			<div class="content">
-				<button class="btn">
-					<router-link 
-					class="nav-link" 
-					:to="props.houseUrl"
-					>
-						View Details
-					</router-link>
-				</button>
+				<router-link 
+				class="nav-link btn" 
+				:to="props.houseUrl"
+				>
+					View Details
+				</router-link>
 			</div>
 			</div>
 			<div class="informations-container">
