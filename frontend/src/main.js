@@ -4,6 +4,7 @@ import router from './router/index.js';
 import { createPinia } from 'pinia';
 import './../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import "@mdi/font/css/materialdesignicons.css";
+import VueGoogleMaps from 'vue-google-maps-community-fork'
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
@@ -21,5 +22,10 @@ const pinia = createPinia();
 app.use(pinia);
 app.use(vuetify);
 app.use(router);
+app.use(VueGoogleMaps, {
+  load: {
+      key: 'AIzaSyCy7CwGZj_z9-v8ZfBrocD2_Xpvk0_ZHSU',
+  },
+})
 
 app.mount("#app");

@@ -26,4 +26,11 @@ const router = createRouter({
     routes,
 })
 
+router.beforeEach((to, from, next) => {
+    const thresholdWidth = 991;
+    const requiresOverflowHidden = to.path === '/' && window.innerWidth >= thresholdWidth;
+    document.documentElement.style.overflow = requiresOverflowHidden ? 'auto' : 'auto';
+    next();
+});
+
 export default router

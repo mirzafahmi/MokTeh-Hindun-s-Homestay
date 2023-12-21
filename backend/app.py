@@ -8,6 +8,9 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 import os
 from sqlalchemy import func
+from dotenv import load_dotenv
+import os
+from views.api_views import api_views
 
 admin = Admin()
 
@@ -38,6 +41,9 @@ def create_app():
     app = Flask(__name__)
     CORS(app)
 
+    load_dotenv()
+    app.config['GMAP_API_KEY'] = os.getenv("GMAP_API_KEY")
+
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
     app.config['SECRET_KEY'] = b'5473D5711462A31425AC9685C3EA6'
     MEDIA_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'media')
@@ -52,6 +58,7 @@ def create_app():
         return AdminUser.query.get(int(user_id))
 
     app.register_blueprint(admin_views)
+    app.register_blueprint(api_views)
 
     db.init_app(app)
     admin.init_app(app)

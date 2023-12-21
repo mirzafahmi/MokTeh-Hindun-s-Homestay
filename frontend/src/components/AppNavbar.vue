@@ -15,7 +15,12 @@ function isDropdownActive(routes) {
 <template>
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand">Mokteh Hindun™</a>
+      <router-link 
+      class="navbar-brand"
+      to="/"
+      >
+      Mokteh Hindun™
+      </router-link>
       <button
         class="navbar-toggler"
         type="button"

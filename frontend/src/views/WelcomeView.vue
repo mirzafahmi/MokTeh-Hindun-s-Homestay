@@ -114,7 +114,7 @@ onMounted(async () => {
         <div id="page-3">
             <div class="container">
                 <h1 class="title text-center pt-5">Here are the list of our homestay</h1>
-                <div class="row w-100 card-list" v-if="houseDetails">
+                <div id="housecard-list" class="row w-100 card-list" v-if="houseDetails">
                     <AppHouseCard 
                     v-for="(item, index) in houseDetails"
                     :key="index"
@@ -134,33 +134,27 @@ onMounted(async () => {
         </div>
     </div>     
 </template>
-<style>
+<style scoped>
     #welcome-text {
         margin-top: 300px;
         min-height: calc(100vh - 356px);
     }
 
     #page-1 {
-        background: linear-gradient(to bottom, #00CDAC, #02AABD);
+        background: linear-gradient(to bottom, #FCB69F, #FFECD2);
         scroll-snap-align: start;
     }
 
     #page-2 {    
-        background: linear-gradient(to bottom, #FFBBBB, #A9F1DF);
+        background: linear-gradient(to bottom, #FFBBBB, #FDFCFB);
     }
 
     #page-3 {
-        background: linear-gradient(to bottom, #E4EfE9, #93A5CF);
+        background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
     }
     
     #page-1, #page-2, #page-3 {
         min-height: calc(100vh - var(--navbar));
-    }
-    .title{
-        font-family: 'roboto', sans-serif;
-        font-size: 72px;
-        font-weight: 800;
-        text-align: left;
     }
 
     #tagline{
@@ -207,15 +201,7 @@ onMounted(async () => {
         margin-top: 100px;
     }
 
-    @media (max-width: 991px) {
-        * {
-            all: initial;
-            all: inherit;
-            all: unset;
-            all: revert;
-            all: revert-layer;
-        }
-        
+    @media (max-width: 991px) {        
         #welcome-text {
         margin-top: 80px;
         min-height: 0px;
@@ -276,6 +262,10 @@ onMounted(async () => {
         scroll-snap-align: start;
         position: relative;
         will-change: transform;
+        }
+
+        #housecard-list {
+            margin-top: 200px;
         }
     }
 </style>

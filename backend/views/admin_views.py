@@ -34,7 +34,7 @@ def admin_logout():
     return redirect(url_for('admin_views.admin_login'))
 
 @admin_views.route('/', methods=['GET'])
-def data():
+def house_data():
     with open('homestays_list.json', 'r') as f:
         data = json.load(f)
 

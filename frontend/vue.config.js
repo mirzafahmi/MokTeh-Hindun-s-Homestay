@@ -1,6 +1,10 @@
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
-  transpileDependencies: true,
+  transpileDependencies: [
+    "vue-google-maps-community-fork",
+    "fast-deep-equal",
+    // Add other dependencies as needed
+  ],
 
   pluginOptions: {
     vuetify: {

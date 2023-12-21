@@ -3,7 +3,10 @@
     "id": "1",
     "name": "rumah_kayu",
     "address": "Alamat",
-    "coordinate": "",
+    "coordinate": {
+      "lat":5.270528, 
+      "lng":103.102528
+    },
     "pricing": 200,
     "pax": "6 to 8",
     "specs": {
@@ -46,7 +49,10 @@
     "id": "2",
     "name": "rumah_batu",
     "address": "Alamat",
-    "coordinate": "",
+    "coordinate": {
+      "lat":5.27075, 
+      "lng":103.102556
+    },
     "pricing": 180,
     "pax": "5 to 7",
     "specs": {
@@ -89,7 +95,10 @@
     "id": "3",
     "name": "rumah_kecik",
     "address": "Alamat",
-    "coordinate": "",
+    "coordinate": {
+      "lat":5.265194, 
+      "lng":103.1012
+    },
     "pricing": 150,
     "pax": "2 to 3",
     "specs": {
