@@ -6,6 +6,8 @@ import './../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import "@mdi/font/css/materialdesignicons.css";
 import VueGoogleMaps from 'vue-google-maps-community-fork'
 
+import 'vue3-timepicker/dist/VueTimepicker.css'
+
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'

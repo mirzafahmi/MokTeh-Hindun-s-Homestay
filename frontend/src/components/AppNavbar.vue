@@ -1,17 +1,3 @@
-<script setup>
-import { useRoute } from 'vue-router';
-
-const route = useRoute();
-
-function isRoute(path) {
-  return route.path === path;
-}
-
-function isDropdownActive(routes) {
-  return routes.some((route) => isRoute(route));
-}
-</script>
-
 <template>
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
@@ -97,6 +83,20 @@ function isDropdownActive(routes) {
     </div>
   </nav>
 </template>
+
+<script setup>
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
+function isRoute(path) {
+  return route.path === path;
+}
+
+function isDropdownActive(routes) {
+  return routes.some((route) => isRoute(route));
+}
+</script>
 
 <style scoped>
 

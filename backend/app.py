@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, send_from_directory
 from flask_login import LoginManager, current_user, login_required
-from models.models import db, AdminUser, BookedDate
+from models.models import db, AdminUser, BookedDate, HouseChoice
 from views.admin_views import admin_views
 from flask_admin import Admin, expose, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
@@ -11,6 +11,7 @@ from sqlalchemy import func
 from dotenv import load_dotenv
 import os
 from views.api_views import api_views
+from flask_admin.form import Select2Widget
 
 admin = Admin()
 
@@ -29,12 +30,27 @@ class MyAdminIndexView(AdminIndexView):
         return redirect(url_for('admin_views.admin_login'))
 
 class MyModelView(ModelView):
+    column_list = ('house', 'client_name', 'from_book_date', 'to_book_date')
     column_default_sort = ('from_book_date', True)
-    column_sortable_list = ['from_book_date', 'to_book_date', 'client_name']  # Add the columns you want to make sortable
+    column_sortable_list = ['house', 'from_book_date', 'to_book_date', 'client_name']  # Add the columns you want to make sortable
     column_searchable_list = ['client_name']
+    form_excluded_columns = ['admin_user']
+    
+    def on_model_change(self, form, model, is_created):
+        model.admin_user = current_user
+        model.admin_user_id = current_user.id
+
+class HouseChoicesView(ModelView):
+    column_list = ('name', 'status')
+    form_widget_args = {
+        'status': {
+            'widget': Select2Widget(),
+        },
+    }
 
 admin = Admin(index_view=MyAdminIndexView())
 
+admin.add_view(HouseChoicesView(HouseChoice, db.session))
 admin.add_view(MyModelView(BookedDate, db.session))
 
 def create_app():

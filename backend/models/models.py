@@ -21,9 +21,18 @@ class HouseChoices(Enum):
     rumah_batu = 'Rumah Batu'
     rumah_kecik = 'Rumah Kecik'
 
+class HouseChoice(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Enum(HouseChoices), unique=True, nullable=False)
+    status = db.Column(db.Boolean, default=True, nullable=False)
+
+    def __str__(self):
+        return self.name.value
+
 class BookedDate(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    house = db.Column(SQLAlchemyEnum(HouseChoices), nullable=False)
+    house_id = db.Column(db.Integer, db.ForeignKey('house_choice.id'), nullable=False)
+    house = db.relationship('HouseChoice', backref='booked_dates')
     client_name = db.Column(db.String(20), nullable=False)
     from_book_date = db.Column(db.DateTime, nullable=False)
     to_book_date = db.Column(db.DateTime, nullable=False)

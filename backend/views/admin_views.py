@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash, jsonify, send_from_directory, current_app
 from flask_login import login_user, logout_user, login_required
-from models.models import db, AdminUser, BookedDate
+from models.models import db, AdminUser, BookedDate, HouseChoice
 from datetime import datetime
 from flask_admin import Admin
 import json
@@ -44,19 +44,21 @@ def house_data():
     # Create a dictionary to store booked dates by house name
     booked_dates_by_house = {}
     for booked_date in booked_dates:
-        house_name = booked_date.house.name  # Assuming 'name' is the field in 'House' model
-        if house_name not in booked_dates_by_house:
-            booked_dates_by_house[house_name] = []
+        house_id = booked_date.house_id
+        house_name_model = HouseChoice.query.get(house_id).name.value.lower().replace(' ', '_')  # Convert to lowercase and replace spaces with underscores
+        if house_name_model not in booked_dates_by_house:
+            booked_dates_by_house[house_name_model] = []
 
-        booked_dates_by_house[house_name].append({
+        booked_dates_by_house[house_name_model].append({
             "from_book_date": booked_date.from_book_date,
             "to_book_date": booked_date.to_book_date,
         })
 
     # Append booked dates to each house in the data
     for house in data:
-        house_name = house.get('name', '')
-        house['booked_dates'] = booked_dates_by_house.get(house_name, [])
+        house_name_json = house.get('name', '').lower().replace(' ', '_')  # Convert to lowercase and replace spaces with underscores
+        house['booked_dates'] = booked_dates_by_house.get(house_name_json, [])
+        house['status'] = HouseChoice.query.filter_by(name=house_name_json).first().status
 
     combined_data = {
         "house_details": data,

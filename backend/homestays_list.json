@@ -2,6 +2,7 @@
   {
     "id": "1",
     "name": "rumah_kayu",
+    "status": true,
     "address": "Alamat",
     "coordinate": {
       "lat":5.270528, 
@@ -48,6 +49,7 @@
   {
     "id": "2",
     "name": "rumah_batu",
+    "status": true,
     "address": "Alamat",
     "coordinate": {
       "lat":5.27075, 
@@ -94,6 +96,7 @@
   {
     "id": "3",
     "name": "rumah_kecik",
+    "status": true,
     "address": "Alamat",
     "coordinate": {
       "lat":5.265194, 

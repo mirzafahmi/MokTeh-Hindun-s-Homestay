@@ -1,23 +1,3 @@
-<script setup>
-import AppHouseCard from './../components/AppHouseCard.vue';
-import AppBenefits from './../components/AppCard.vue';
-import { useHouseStore } from '@/store/houseStore';
-import { ref, onMounted } from 'vue';
-
-const houseStore = useHouseStore();
-const houseDetails = ref(null);
-
-const transformName = (name) => {
-  return name.replace(/_/g, ' ').replace(/\b\w/g, (match) => match.toUpperCase());
-};
-
-onMounted(async () => {
-    await houseStore.fetchHouseDetails();
-    houseDetails.value = houseStore.houseDetails;
-    console.log(houseDetails.value)
-});
-</script>
-
 <template>
     <div id="scroll-container">
         <div id="page-1">
@@ -134,6 +114,28 @@ onMounted(async () => {
         </div>
     </div>     
 </template>
+
+<script setup>
+import AppHouseCard from './../components/AppHouseCard.vue';
+import AppBenefits from './../components/AppCard.vue';
+import { useHouseStore } from '@/store/houseStore';
+import { ref, onMounted } from 'vue';
+
+const houseStore = useHouseStore();
+const houseDetails = ref(null);
+
+const transformName = (name) => {
+  return name.replace(/_/g, ' ').replace(/\b\w/g, (match) => match.toUpperCase());
+};
+
+onMounted(async () => {
+    await houseStore.fetchHouseDetails();
+    houseDetails.value = houseStore.houseDetails;
+    console.log(houseDetails.value)
+});
+</script>
+
+
 <style scoped>
     #welcome-text {
         margin-top: 300px;

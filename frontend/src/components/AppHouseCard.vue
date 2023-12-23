@@ -1,21 +1,3 @@
-<script setup>
-import { defineProps } from 'vue';
-
-const props = defineProps([
-	'houseUrl',
-	'houseName',
-	'houseRecommendation',
-	'housePax',
-	'housePricing',
-	'houseBedroom',
-	'houseBathroom',
-	'houseKitchen',
-	'houseFridge',
-	'houseKettle',
-	'houseIron'
-]);
-</script>
-
 <template>
 <div class="col-lg-4 col">
 	<ul class="d-flex align-items-center justify-content-center">
@@ -151,6 +133,24 @@ const props = defineProps([
 	</ul>
 </div>
 </template>
+
+<script setup>
+import { defineProps } from 'vue';
+
+const props = defineProps([
+	'houseUrl',
+	'houseName',
+	'houseRecommendation',
+	'housePax',
+	'housePricing',
+	'houseBedroom',
+	'houseBathroom',
+	'houseKitchen',
+	'houseFridge',
+	'houseKettle',
+	'houseIron'
+]);
+</script>
 
 <style scoped>
 * {

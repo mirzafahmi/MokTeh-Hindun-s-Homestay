@@ -177,6 +177,7 @@
                             :min="minDate"
                             :max="maxDate"
                             :allowed-dates=allowedDates
+                            :disabled="!houseDetails.status"
                             multiple
                             header="No date selected"
                             border="1"
@@ -184,30 +185,70 @@
                             @change="onDateChange"
                         >    
                         </v-date-picker>    
-                        <a
+                        <button
                             id="whatsApp-btn"
                             class="btn btn-primary mt-3"
-                            :href="whatsappLink"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            type="button" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#check-in-out"
                         >
-                            Chat with us on WhatsApp
-                        </a>
+                            Select Check-In/Out Time
+                    </button>
                     </div>
                 </div>
             </div>    
+            <AppModal
+                modalId="check-in-out"
+                ariaLabel="checkInOutLabel"
+                ariaHidden="true"
+                title="Select Time of Check-in/out"
+                confirmButtonText="Check Homestay Availability"
+                :confirmButtonClick="whatsappLink"
+                @close="handleModalClose"
+                @cancel="handleModalCancel"
+                @confirm="handleModalConfirm"
+            >   
+                <div class="row">
+                    <div class="col d-flex flex-column">
+                        <h6>Select Check-in time</h6>
+                        <vue-timepicker
+                            v-model="checkedInTime"
+                            format="HH:mm"
+                            :minute-interval="30"
+                            :hour-range="allowedHourRange"
+                            :minute-range="allowedMinuteRange"
+                            close-on-complete
+                        >
+                        </vue-timepicker>
+                    </div>
+                    <div class="col d-flex flex-column">
+                        <h6>Select Check-out time</h6>
+                        <vue-timepicker
+                            v-model="checkedOutTime"
+                            format="HH:mm"
+                            :minute-interval="30"
+                            :hour-range="allowedHourRange"
+                            :minute-range="allowedMinuteRange"
+                            close-on-complete
+                        >
+                        </vue-timepicker>
+                    </div>
+                </div>
+            </AppModal>
         </div>
         <div id="house-details" class="container pt-5" v-else>
             <v-skeleton-loader type="card, paragraph"></v-skeleton-loader>
         </div>
     </div>
-    
 </template>
 
 <script setup>
 import { useHouseStore } from '@/store/houseStore';
 import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import AppModal from '@/components/AppModal'
+import VueTimepicker from 'vue3-timepicker'
+
 
 const houseStore = useHouseStore();
 const houseDetails = ref(null);
@@ -216,6 +257,20 @@ let bookedDateStrings = [];
 let minDate = '';
 let maxDate = '';
 let markers = ref([]);
+
+let checkedInTime = ref(
+    {
+        HH: "",
+        mm: ""
+    }
+);
+let checkedOutTime = ref(
+    {
+        HH: "",
+        mm: ""
+    }
+);
+
 
 const backEndServer = "http://127.0.0.1:5000/"
 
@@ -226,7 +281,6 @@ onMounted(async () => {
     await houseStore.fetchHouseDetails();
     houseDetails.value = houseStore.houseDetails.find(detail => detail.name === houseName);
 
-    // Check if houseDetails.value has a booked_dates property and if it is an array
     bookedDateStrings = Array.isArray(houseDetails.value?.booked_dates)
         ? houseDetails.value.booked_dates.flatMap(dateRange => {
             const startDate = new Date(dateRange.from_book_date).toISOString().split('T')[0];
@@ -283,7 +337,7 @@ const whatsappLink = computed(() => {
         year: 'numeric',
         })
     )
-    const encodedMessage = encodeURIComponent(`Hello! I'm interested in booking on ${formattedDate} for ${transformName(houseDetails.value.name)}. Can you provide more information?`);
+    const encodedMessage = encodeURIComponent(`Hello! I'm interested in booking on ${formattedDate} at ${checkedInTime.value.HH}:${checkedInTime.value.mm} for ${transformName(houseDetails.value.name)}. Can you provide more information?`);
 
     return `https://wa.me/+60179402337?text=${encodedMessage}`;
   } else {
@@ -293,7 +347,6 @@ const whatsappLink = computed(() => {
   }
 });
 
-const center = ref({ lat: 5.27075, lng: 103.102556 });
 </script>
 
 <style scoped>
