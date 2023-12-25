@@ -170,7 +170,7 @@ const props = defineProps([
 }
  ul .booking-card {
 	 position: relative;
-	 height: 590px;
+	 height: 750px;
 	 width: 300px;
 	 margin-bottom: 20px;
 	 display: flex;
@@ -230,7 +230,7 @@ const props = defineProps([
 	 flex: 1 0 auto;
 	 padding: 20px;
 	 background: #f0f0f0;
-	 transform: translateY(206px);
+	 transform: translateY(300px);
 	 transition: 0.3s;
 }
  ul .booking-card .informations-container .title {
@@ -303,7 +303,7 @@ const props = defineProps([
  ul .booking-card:hover .informations-container .more-information {
 	 opacity: 1;
 }
- @media (max-width: 768px) {
+ /*@media (max-width: 768px) {
 	 ul .booking-card::before {
 		 background: rgba(10, 72, 112, 0.6);
 	}
@@ -317,7 +317,7 @@ const props = defineProps([
 	 ul .booking-card .informations-container .more-information {
 		 opacity: 1;
 	}
-}
+}*/
 
 hr {
 	margin: 5px 0px

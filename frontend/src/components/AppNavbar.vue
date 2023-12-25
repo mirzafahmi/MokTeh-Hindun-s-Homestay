@@ -109,4 +109,7 @@ nav {
   color: rgba(var(--bs-emphasis-color-rgb), 0.65);
 }
 
+.active {
+  border-bottom: 1px solid black
+}
 </style>

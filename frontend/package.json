@@ -22,6 +22,7 @@
     "vue": "^3.2.13",
     "vue-google-maps-community-fork": "^0.3.1",
     "vue-router": "^4.0.3",
+    "vue3-carousel": "^0.3.1",
     "vue3-timepicker": "^1.0.0-beta.2",
     "vuetify": "^3.4.7",
     "webfontloader": "^1.0.0"

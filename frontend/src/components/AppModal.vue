@@ -55,32 +55,15 @@ const props = defineProps(
         'confirmButtonClick'
     ]
 );
-const emits = defineEmits(
-    [
-        'close',
-        'cancel',
-        'confirm'
-    ]
-);
-
-const closeModal = () => {
-    
-};
-
-const cancelAction = () => {
-    emits('cancel');
-    closeModal();
-};
-
-const confirmAction = () => {
-    emits('confirm');
-    closeModal();
-};
 </script>
 
 <style scoped>
 #exampleModal {
 background-color: transparent;
+}
+
+button {
+    color: white;
 }
 </style>
   

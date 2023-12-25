@@ -1,7 +1,3 @@
-<script setup>
-import AppNavbar from "./components/AppNavbar.vue";
-</script>
-
 <template>
   <v-app class="hidden">
     <AppNavbar />
@@ -10,6 +6,10 @@ import AppNavbar from "./components/AppNavbar.vue";
     </div>
   </v-app>
 </template>
+
+<script setup>
+import AppNavbar from "./components/AppNavbar.vue";
+</script>
 
 <style>
 :root {
@@ -21,9 +21,13 @@ import AppNavbar from "./components/AppNavbar.vue";
   --accent-shade: #65bbc0;
   --navbar: 56px;
 }
-
+/*
 #router-view-main {
   margin-top: var(--navbar);
+}*/
+
+.page-container {
+  padding-top: var(--navbar)
 }
 
 .custom-divider {
@@ -39,6 +43,14 @@ import AppNavbar from "./components/AppNavbar.vue";
   font-size: 72px;
   font-weight: 800;
   text-align: left;
+}
+
+.sub-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(58 / 1.618 * 0.6px);
+    font-weight: 100;
+    text-align: left;
+    margin: 30px 0px;
 }
 /*
 #app {

@@ -9,7 +9,7 @@ export const useHouseStore = defineStore({
     actions: {
       async fetchHouseDetails() {
         try {
-          const path = 'http://127.0.0.1:5000/';
+          const path = 'http://192.168.0.142:5000';
           const res = await Axios.get(path);
           this.houseDetails = res.data.house_details;
         } catch (error) {
