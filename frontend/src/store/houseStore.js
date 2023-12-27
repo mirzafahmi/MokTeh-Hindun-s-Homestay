@@ -7,9 +7,8 @@ export const useHouseStore = defineStore({
       houseDetails: null,
     }),
     actions: {
-      async fetchHouseDetails() {
+      async fetchHouseDetails(path) {
         try {
-          const path = 'http://192.168.0.142:5000';
           const res = await Axios.get(path);
           this.houseDetails = res.data.house_details;
         } catch (error) {
@@ -17,4 +16,11 @@ export const useHouseStore = defineStore({
         }
       },
     },
+  });
+
+  export const useServerStore = defineStore({
+    id: 'server',
+    state: () => ({
+      backEndServer: 'http://192.168.0.142:5000',
+    }),
   });

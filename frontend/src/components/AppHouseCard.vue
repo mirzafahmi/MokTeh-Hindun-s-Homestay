@@ -1,7 +1,9 @@
 <template>
 <div class="col-lg-4 col">
 	<ul class="d-flex align-items-center justify-content-center">
-		<li class="booking-card" style="background-image: url(https://images.unsplash.com/photo-1532509854226-a2d9d8e66f8e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);">
+		<li 
+		class="booking-card" 
+		:style="{ backgroundImage: 'url(' + props.houseImage + ')' }">
 			<div class="book-container">
 			<div class="content">
 				<router-link 
@@ -139,6 +141,7 @@ import { defineProps } from 'vue';
 
 const props = defineProps([
 	'houseUrl',
+	'houseImage',
 	'houseName',
 	'houseRecommendation',
 	'housePax',

@@ -7,7 +7,8 @@ const props = defineProps([
     "benefitsIcon",
     "benefitsShape",
     "gradientColor1",
-    "gradientColor2"
+    "gradientColor2",
+    "benefitsIconViewBox"
 ]);
 
 const gradientId = ref(generateUniqueId());
@@ -22,7 +23,7 @@ function generateUniqueId() {
             <div class="div-icon d-flex flex-column">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 64 64"
+                    :viewBox="props.benefitsIconViewBox"
                     class="position-absolute top-0 start-50 translate-middle-x icon"
                     style="transform: translateX(-50%); z-index: 1;"
                     >
@@ -53,6 +54,10 @@ function generateUniqueId() {
     </div>    
 </template>
 
+<script setup>
+
+</script>
+
 <style scoped>
     .div-icon {
         height: 120px;
@@ -76,8 +81,8 @@ function generateUniqueId() {
         z-index: 100;
     }
     .shape{
-        height: 170px;
-        top: -25px;
+        height: 200px;
+        top: -45px;
     }
 
     @media (max-width: 991px) {

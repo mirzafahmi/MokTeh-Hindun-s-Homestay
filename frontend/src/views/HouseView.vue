@@ -13,7 +13,11 @@
                             v-for="(pic, index) in houseDetails.picture" 
                             :key="index"
                             >
-                                <img :src="backEndServer + pic" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+                                <img 
+                                    :src="backEndServer + pic" 
+                                    alt="" 
+                                    style="object-fit: cover; width: 100%; height: 100%;"
+                                >
                             </v-carousel-item>
                         </v-carousel>
                     </div>
@@ -246,7 +250,7 @@
 </template>
 
 <script setup>
-import { useHouseStore } from '@/store/houseStore';
+import { useHouseStore,  useServerStore } from '@/store/houseStore';
 import { ref, onMounted, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import AppModal from '@/components/AppModal'
@@ -279,13 +283,13 @@ let allowedMinuteRangeCheckIn = ref([])
 let allowedHourRangeCheckOut = ref([])
 let allowedMinuteRangeCheckOut = ref([])
 
-const backEndServer = "http://192.168.0.142:5000/"
+const backEndServer = useServerStore().backEndServer
 
 onMounted(async () => {
     const route = useRoute();
     const houseName = route.params.houseName;
 
-    await houseStore.fetchHouseDetails();
+    await houseStore.fetchHouseDetails(backEndServer);
     houseDetails.value = houseStore.houseDetails.find(detail => detail.name === houseName);
 
     bookedDateStrings = Array.isArray(houseDetails.value?.booked_dates)
