@@ -18,7 +18,7 @@ const routes = [
         path: '/:houseName',
         name: "HouseDetails",
         component: HouseView
-    }
+    },
 ]
 
 const router = createRouter({

@@ -10,18 +10,23 @@
             </div>
             <div class="col-xs-12 col-md-8">
                 <div class="card-body">
-                    <h3 
+                    <h2 
                         class="card-title"
                     >
                         {{ props.cardTitle }}
-                    </h3>
+                    </h2>
                     <p class="card-text">
                         {{ props.cardSubtitle }}    
                     </p>
                     <p class="card-text">
-                        <small class="text-body-secondary">
-                            {{ props.cardLocation }}  
-                        </small>
+                        <router-link 
+                        :to="{ name: 'HouseDetails', params: { houseName: 'rumah_kayu' }, query: { markerId: props.markerId } }"
+                            >
+                            <small class="text-body-secondary">
+                                <i class="fa-solid fa-location-dot"></i>
+                                ~{{ props.cardLocation }}  
+                            </small>
+                        </router-link>
                     </p>
                 </div>
             </div>
@@ -36,7 +41,8 @@ const props = defineProps([
     'cardTitle',
     'cardSubtitle',
     'cardLocation',
-    'cardPicture'
+    'cardPicture',
+    'markerId'
 ])
 </script>
 
@@ -52,6 +58,23 @@ const props = defineProps([
         height: 100%;
     }
 
+    @media (max-width: 768px) {
+        .card-title {
+            margin-top: 1rem;
+        }
 
+        .card {
+            height: 100%;
+        }
+
+        img {
+        width: 100%;
+        height: 100%;
+        margin-top: calc(1 * 0.7rem);
+        }
+        .card-body {
+            padding: 1rem 0px !important;
+        }
+    }
 </style>
 

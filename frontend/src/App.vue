@@ -1,9 +1,7 @@
 <template>
   <v-app class="hidden">
     <AppNavbar />
-    <div id="router-view-main">
-      <router-view :key="$route.fullPath"/>
-    </div>
+    <router-view :key="$route.fullPath"/>
   </v-app>
 </template>
 
@@ -21,10 +19,6 @@ import AppNavbar from "./components/AppNavbar.vue";
   --accent-shade: #65bbc0;
   --navbar: 56px;
 }
-/*
-#router-view-main {
-  margin-top: var(--navbar);
-}*/
 
 .page-container {
   padding-top: var(--navbar)
@@ -52,33 +46,5 @@ import AppNavbar from "./components/AppNavbar.vue";
     text-align: left;
     margin: 30px 0px;
 }
-/*
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-@media (min-width: 992px) {
-    html, body {
-    height: 100vh !important;
-    overflow: hidden !important;
-    margin: 0 !important;
-    }
-
-    #scroll-container {
-    overflow: auto;
-    height: calc(100vh - var(--navbar));
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y mandatory;
-    }
-
-    #page-1, #page-2, #page-3 {
-    scroll-snap-align: start;
-    position: relative;
-    will-change: transform;
-    }
-}*/
 </style>

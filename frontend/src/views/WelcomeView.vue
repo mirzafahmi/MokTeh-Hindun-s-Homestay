@@ -77,7 +77,7 @@
                             gradientColor2="#FFDDE1"
                         />
                         <AppBenefits 
-                            benefitsTitle="Flexible Check-in/out"
+                            benefitsTitle="Flexible Check-in/Check-out"
                             benefitsText="Experience the convenience of flexible check-in and check-out options tailored to suit your travel schedule."
                             benefitsIconViewBox="-120 -90 1300 1300"
                             :benefitsIcon="['M704 192h160v736H160V192h160.064v64H704v-64zM311.616 537.28l-45.312 45.248L447.36 763.52l316.8-316.8-45.312-45.184L447.36 673.024 311.616 537.28zM384 192V96h256v96H384z']"
@@ -148,16 +148,16 @@ const backendServer = useServerStore().backEndServer
 
 <style scoped>
     #page-1 {
-        background: linear-gradient(to bottom, #FCB69F, #FFECD2);
+        background: linear-gradient(45deg, #A1C4FD, #C2E9FB);
         scroll-snap-align: start;
     }
 
     #page-2 {    
-        background: linear-gradient(to bottom, #FFBBBB, #FDFCFB);
+        background: linear-gradient(45deg, #FFBBBB, #FDFCFB);
     }
 
     #page-3 {
-        background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
+        background: linear-gradient(45deg, #93A5CF, #E4EfE9);
     }
     
     #page-1, #page-2, #page-3, #page-4 {

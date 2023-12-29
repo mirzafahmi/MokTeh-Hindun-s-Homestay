@@ -52,8 +52,8 @@
     "status": true,
     "address": "Alamat",
     "coordinate": {
-      "lat":5.27075, 
-      "lng":103.102556
+      "lat":5.270665, 
+      "lng":103.102449
     },
     "pricing": 180,
     "pax": "5 to 7",

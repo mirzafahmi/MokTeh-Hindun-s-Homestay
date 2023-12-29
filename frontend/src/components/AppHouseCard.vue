@@ -306,23 +306,14 @@ const props = defineProps([
  ul .booking-card:hover .informations-container .more-information {
 	 opacity: 1;
 }
- /*@media (max-width: 768px) {
-	 ul .booking-card::before {
-		 background: rgba(10, 72, 112, 0.6);
-	}
-	 ul .booking-card .book-container .content {
-		 opacity: 1;
-		 transform: translateY(0px);
-	}
-	 ul .booking-card .informations-container {
-		 transform: translateY(0px);
-	}
-	 ul .booking-card .informations-container .more-information {
-		 opacity: 1;
-	}
-}*/
 
 hr {
 	margin: 5px 0px
+}
+
+@media (min-width: 1400px) {
+	ul .booking-card {
+		flex: 0 0 350px;
+	}
 }
 </style>

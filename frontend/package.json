@@ -44,6 +44,9 @@
     "webpack-plugin-vuetify": "^2.0.0-alpha.0"
   },
   "eslintConfig": {
+    "globals": {
+      "google": "readonly"
+    },
     "root": true,
     "env": {
       "node": true

@@ -3,38 +3,42 @@
         <div class="page-container">
             <div class="container">
                 <h1 class="title mt-5">
-                    Must visit place while in Terengganu
+                    Visit here while you at our homestay
                 </h1>
                 <div class="card-list">
                     <div class="row">
                         <AppVisitCard
+                            markerId="2"
                             cardPicture="/NDAT.jpg"
                             cardTitle="Nasi Dagang Atas Tol (NDAT)"
-                            cardSubtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatem sed omnis dolores assumenda quia fugit et expedita dolor cupiditate, nam illo suscipit adipisci consequatur impedit, nihil accusamus modi quidem?"
+                            cardSubtitle="Savor the authentic flavors of Terengganu at Nasi Dagang Atas Tol Restaurant. Indulge in the region's iconic dish, Nasi Dagang, served with a perfect blend of flavors and accompanied by a warm and inviting atmosphere."
                             cardLocation="10 KM from the location"
                         />
                     </div>
                     <div class="row">
                         <AppVisitCard
-                            cardPicture="/sekayu.jpg"
-                            cardTitle="Air Terjun Sekayu"
-                            cardSubtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatem sed omnis dolores assumenda quia fugit et expedita dolor cupiditate, nam illo suscipit adipisci consequatur impedit, nihil accusamus modi quidem?"
+                            markerId="3"
+                            cardPicture="/muzium.jpg"
+                            cardTitle="Muzium Terengganu"
+                            cardSubtitle="Immerse yourself in Terengganu's past at the State Museum. Discover centuries-old artifacts, traditional crafts, and the vibrant history of this coastal state—all housed in a modern architectural gem."
                             cardLocation="40 KM from the location"
                         />
                     </div>
                     <div class="row">
                         <AppVisitCard
+                            markerId="4"
                             cardPicture="/draw_bridge.jpg"
                             cardTitle="Jabatan Angkat Kuala Terengganu"
-                            cardSubtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatem sed omnis dolores assumenda quia fugit et expedita dolor cupiditate, nam illo suscipit adipisci consequatur impedit, nihil accusamus modi quidem?"
+                            cardSubtitle="Terengganu's skyline is transformed by the majestic Terengganu Drawbridge. Discover the beauty and functionality of this drawbridge, a symbol of progress that complements the region's rich cultural heritage."
                             cardLocation="10 KM from the location"
                         />
                     </div>
                     <div class="row">
                         <AppVisitCard
+                            markerId="5"
                             cardPicture="/pasar_payang.jpeg"
                             cardTitle="Pasar Payang"
-                            cardSubtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatem sed omnis dolores assumenda quia fugit et expedita dolor cupiditate, nam illo suscipit adipisci consequatur impedit, nihil accusamus modi quidem?"
+                            cardSubtitle="Discover the heartbeat of Terengganu at Pasar Payang. This bustling market is a sensory delight, where the rich tapestry of local life unfolds through colorful stalls, aromatic spices, and unique handcrafted souvenirs."
                             cardLocation="10 KM from the location"
                         />
                     </div>
@@ -47,7 +51,6 @@
 
 <script setup>
 import AppVisitCard from './../components/AppVisitCard.vue';
-import AppBenefits from './../components/AppCard.vue';
 import { useHouseStore, useServerStore } from '@/store/houseStore';
 import { ref, onMounted } from 'vue';
 
@@ -62,7 +65,7 @@ onMounted(async () => {
 
 <style scoped>
     #main-page {
-        background-color: blanchedalmond;
+        background: linear-gradient(45deg, #A9F1DF , #FFBBBB);
         min-height: 100vh;
     }
 
