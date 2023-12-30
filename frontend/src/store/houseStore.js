@@ -21,6 +21,6 @@ export const useHouseStore = defineStore({
   export const useServerStore = defineStore({
     id: 'server',
     state: () => ({
-      backEndServer: 'http://192.168.0.142:5000',
+      backEndServer: 'https://homestay-backend-kali.onrender.com/',
     }),
   });

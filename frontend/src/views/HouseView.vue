@@ -89,18 +89,6 @@
                             >
                             </vue-timepicker>
                         </div>
-                        <div class="col d-flex flex-column">
-                            <h6>Select Check-out time</h6>
-                            <vue-timepicker
-                                v-model="checkedOutTime"
-                                format="HH:mm"
-                                :minute-interval="30"
-                                :hour-range="allowedHourRangeCheckOut"
-                                :minute-range="allowedMinuteRangeCheckOut"
-                                close-on-complete
-                            >
-                            </vue-timepicker>
-                        </div>
                     </div>
                 </AppModal>
             </div>
