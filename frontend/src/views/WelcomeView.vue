@@ -105,7 +105,7 @@
                     v-for="(item, index) in houseDetails"
                     :key="index"
                     :houseName="transformName(item.name)"
-                    :houseImage="backendServer + '/media/' + item.name + '/exterior-1.jpg'"
+                    :houseImage="backendServer + '/media/' + item.name + '/card/card.jpg'"
                     :housePax="item.pax"
                     :housePricing="item.pricing"
                     :houseBedroom="item.specs.room.length"

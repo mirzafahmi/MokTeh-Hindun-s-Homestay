@@ -58,7 +58,6 @@ def create_app():
     CORS(app)
 
     load_dotenv()
-    app.config['GMAP_API_KEY'] = os.getenv("GMAP_API_KEY")
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
     app.config['SECRET_KEY'] = b'5473D5711462A31425AC9685C3EA6'

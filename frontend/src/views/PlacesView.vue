@@ -12,7 +12,7 @@
                             cardPicture="/NDAT.jpg"
                             cardTitle="Nasi Dagang Atas Tol (NDAT)"
                             cardSubtitle="Savor the authentic flavors of Terengganu at Nasi Dagang Atas Tol Restaurant. Indulge in the region's iconic dish, Nasi Dagang, served with a perfect blend of flavors and accompanied by a warm and inviting atmosphere."
-                            cardLocation="10 KM from the location"
+                            cardLocation="8 KM from the location"
                         />
                     </div>
                     <div class="row">
@@ -21,7 +21,7 @@
                             cardPicture="/muzium.jpg"
                             cardTitle="Muzium Terengganu"
                             cardSubtitle="Immerse yourself in Terengganu's past at the State Museum. Discover centuries-old artifacts, traditional crafts, and the vibrant history of this coastal state—all housed in a modern architectural gem."
-                            cardLocation="40 KM from the location"
+                            cardLocation="8.3 KM from the location"
                         />
                     </div>
                     <div class="row">
@@ -30,7 +30,7 @@
                             cardPicture="/draw_bridge.jpg"
                             cardTitle="Jabatan Angkat Kuala Terengganu"
                             cardSubtitle="Terengganu's skyline is transformed by the majestic Terengganu Drawbridge. Discover the beauty and functionality of this drawbridge, a symbol of progress that complements the region's rich cultural heritage."
-                            cardLocation="10 KM from the location"
+                            cardLocation="11.7 KM from the location"
                         />
                     </div>
                     <div class="row">
@@ -39,7 +39,7 @@
                             cardPicture="/pasar_payang.jpeg"
                             cardTitle="Pasar Payang"
                             cardSubtitle="Discover the heartbeat of Terengganu at Pasar Payang. This bustling market is a sensory delight, where the rich tapestry of local life unfolds through colorful stalls, aromatic spices, and unique handcrafted souvenirs."
-                            cardLocation="10 KM from the location"
+                            cardLocation="9.5 KM from the location"
                         />
                     </div>
                 </div>

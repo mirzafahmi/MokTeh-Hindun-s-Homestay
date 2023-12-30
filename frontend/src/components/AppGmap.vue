@@ -8,7 +8,8 @@
                     class="sub-title"
                     v-for="(marker, index) in markerOptionsArray.slice(1)" 
                     :key="index" 
-                    @click="calculateAndDisplayRoute(marker.position)">
+                    :class="{ 'active-title': marker.id === activeMarker }"
+                    @click="calculateAndDisplayRoute(marker.id, marker.position)">
                     {{ marker.title }}
                 </li>
             </ul>
@@ -39,6 +40,7 @@ let originMarker = ref({
 
 const directionsService = ref(null);
 const directionsRenderer = ref(null);
+const activeMarker = ref(null);
 
 const markerOptionsArray = [
     originMarker.value,
@@ -83,11 +85,10 @@ onMounted(async () => {
         const infoWindow = new google.maps.InfoWindow({
             content: `<div>${options.title}</div>`,
         });
-        
-        infoWindow.open(map.value, marker);
 
         marker.addListener('click', () => {
-        calculateAndDisplayRoute(options.position);
+        
+        calculateAndDisplayRoute(options.id, options.position);
         });
 
         marker.setMap(map.value);
@@ -95,22 +96,31 @@ onMounted(async () => {
     });
 
     if (props.markerId) {
-        const selectedMarker = markerOptionsArray.find(marker => marker.id.toString() === props.markerId).position;
-        calculateAndDisplayRoute(selectedMarker)
-        window.scrollTo(0, document.body.scrollHeight);
+        const selectedMarker = markerOptionsArray.find(marker => marker.id.toString() === props.markerId);
+        calculateAndDisplayRoute(selectedMarker.id, selectedMarker.position)
+        const windowWidth = window.innerWidth;
+
+        if (windowWidth >= 992) {
+            // Larger screens: Scroll to the bottom
+            window.scrollTo(0, document.body.scrollHeight);
+        } else {
+            // Smaller screens: Scroll to a specific height from the bottom
+            const specificHeight = 1300; // Set your specific height value
+            window.scrollTo(0, document.body.scrollHeight - specificHeight);
+        }
     }
 });
 
 // Create a global info window variable
 let infoWindow = null;
 
-function calculateAndDisplayRoute(destination) {
+function calculateAndDisplayRoute(index, destination) {
   const request = {
     origin: originMarker.value.position,
     destination: destination,
     travelMode: google.maps.TravelMode.DRIVING,
   };
-
+    activeMarker.value = index;
   directionsService.value.route(request, (result, status) => {
     if (status === 'OK') {
       // Set new directions
@@ -158,7 +168,6 @@ function getDirectionsInfoContent(route) {
         </div>
         `;
 }
-
 </script>
     
 <style scoped>
@@ -169,12 +178,12 @@ function getDirectionsInfoContent(route) {
 }
 
 .title {
-    font-size: 26px;
-    padding: 5px
+    font-size: 23px;
+    padding: 3px
 }
 
 .sub-title {
-    font-size: 16px;
+    font-size: 11px;
 }
 
 #map {
@@ -215,6 +224,11 @@ function getDirectionsInfoContent(route) {
 
 .distance-details {
     padding: 5px;
+}
+
+.active-title {
+    background-color: rgb(7, 238, 7) !important;
+    color: black;
 }
 
 @media (max-width: 1200px) {
