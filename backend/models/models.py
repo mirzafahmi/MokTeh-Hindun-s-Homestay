@@ -1,9 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from datetime import datetime, timedelta, timezone
+from sqlalchemy import event
 from enum import Enum
 from sqlalchemy import Enum as SQLAlchemyEnum
 from sqlalchemy.orm import validates
+from flask import current_app
 
 db = SQLAlchemy()
 
@@ -28,6 +30,16 @@ class HouseChoice(db.Model):
 
     def __str__(self):
         return self.name.value
+
+@event.listens_for(db.metadata, 'after_create')
+def insert_default_house_choices(*args, **kwargs):
+    with current_app.app_context():
+        for choice in HouseChoices:
+            house_choice = HouseChoice.query.filter_by(name=choice.name).first()
+            if not house_choice:
+                house_choice = HouseChoice(name=choice.name, status=True)
+                db.session.add(house_choice)
+        db.session.commit()
 
 class BookedDate(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -317,7 +317,10 @@ const backendServer = useServerStore().backEndServer
     }
 
     @media (max-width: 576px) {
-        
+        #page-1, #page-2, #page-3, #page-4 {
+            min-height: max(100vh, 900px);
+        }
+
         #welcome-text {
             margin-top: 10px;
             min-height: 0px;
