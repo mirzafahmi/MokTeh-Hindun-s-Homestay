@@ -72,12 +72,9 @@
             :class="{ active: isRoute('/visit') }"
             to="/visit"
             >
-              Visit
+              Places To Visit
             </router-link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
-          </li>  
         </ul>
       </div>
     </div>

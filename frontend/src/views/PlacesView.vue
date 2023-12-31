@@ -2,11 +2,14 @@
     <div id="main-page">
         <div class="page-container">
             <div class="container">
-                <h1 class="title mt-5">
+                <h1 
+                    class="title mt-5" 
+                    v-motion-slide-visible-top
+                >
                     Visit here while you at our homestay
                 </h1>
                 <div class="card-list">
-                    <div class="row">
+                    <div class="row" v-motion-slide-left>
                         <AppVisitCard
                             markerId="2"
                             cardPicture="/NDAT.jpg"
@@ -15,7 +18,7 @@
                             cardLocation="8 KM from the location"
                         />
                     </div>
-                    <div class="row">
+                    <div class="row" v-motion-slide-right>
                         <AppVisitCard
                             markerId="3"
                             cardPicture="/muzium.jpg"
@@ -24,7 +27,7 @@
                             cardLocation="8.3 KM from the location"
                         />
                     </div>
-                    <div class="row">
+                    <div class="row" v-motion-slide-left>
                         <AppVisitCard
                             markerId="4"
                             cardPicture="/draw_bridge.jpg"
@@ -33,7 +36,7 @@
                             cardLocation="11.7 KM from the location"
                         />
                     </div>
-                    <div class="row">
+                    <div class="row" v-motion-slide-right>
                         <AppVisitCard
                             markerId="5"
                             cardPicture="/pasar_payang.jpeg"
@@ -46,7 +49,6 @@
             </div>
         </div>
     </div>
-    
 </template>
 
 <script setup>

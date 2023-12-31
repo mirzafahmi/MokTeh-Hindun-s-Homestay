@@ -1,12 +1,46 @@
 <template>
   <v-app class="hidden">
-    <AppNavbar />
+    <SpeedInsights />
+    <AppNavbar v-motion-slide-top />
     <router-view :key="$route.fullPath"/>
   </v-app>
 </template>
 
 <script setup>
 import AppNavbar from "./components/AppNavbar.vue";
+import { SpeedInsights } from '@vercel/speed-insights/vue';
+
+import { useServerStore } from '@/store/houseStore';
+import { onMounted } from "vue";
+import Axios from 'axios';
+
+const backendServer = useServerStore().backEndServer
+
+const startKeepAlive = async () => {
+  try {
+    await pingServer();
+    setTimeout(() => {
+      startKeepAlive();
+    }, 840000); 
+  } catch (error) {
+    console.error('Failed to send ping request:', error);
+  }
+};
+
+const pingServer = async () => {
+  try {
+    const pingTime = new Date();
+    await Axios.get(backendServer);
+    console.log(`Ping sent to ${backendServer} at ${pingTime}`);
+  } catch (error) {
+    console.error('Failed to send ping request:', error);
+    throw error; 
+  }
+};
+
+onMounted(() => {
+  startKeepAlive();
+});
 </script>
 
 <style>

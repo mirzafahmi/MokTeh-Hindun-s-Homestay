@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from './router/index.js';
 import { createPinia } from 'pinia';
+import { MotionPlugin } from "@vueuse/motion";
 import './../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import "@mdi/font/css/materialdesignicons.css";
 
@@ -23,5 +24,7 @@ const pinia = createPinia();
 app.use(pinia);
 app.use(vuetify);
 app.use(router);
+app.use(MotionPlugin)
+
 
 app.mount("#app");

@@ -2,12 +2,12 @@
     <div class="main-page">
         <div class="page-container">
             <div id="house-details" class="container pt-5" v-if="houseDetails">
-                <h1 class="title">
+                <h1 class="title" v-motion-slide-visible-top>
                     {{ transformName(houseDetails.name) }}
                 </h1>
                 <hr>
                 <div class="row gx-md-5 mb-3">
-                    <div class="col-xs-12 col-xl-7 d-flex justify-center align-center">
+                    <div class="col-xs-12 col-xl-7 d-flex justify-center align-center" v-motion-slide-visible-right>
                         <v-carousel>
                             <v-carousel-item 
                             v-for="(pic, index) in houseDetails.picture" 
@@ -21,7 +21,7 @@
                             </v-carousel-item>
                         </v-carousel>
                     </div>
-                    <div class="col-12 col-md-12 col-xl-5 mt-5 mt-lg-0">
+                    <div class="col-12 col-md-12 col-xl-5 mt-5 mt-lg-0" v-motion-slide-visible-left>
                         <AppHouseSpecCard
                             :housePax="houseDetails.pax"
                             :housePricing="houseDetails.pricing"
@@ -33,13 +33,13 @@
                             :houseIron="houseDetails.specs.iron"
                         />
                     </div>
-                    <div class="col-sm-12 col-lg-7 col-xl-8 mt-5">
+                    <div class="col-sm-12 col-lg-7 col-xl-8 mt-5" v-motion-slide-visible-right>
                         <AppGmap
                             :houseDetails="houseDetails"
                             :markerId="markerId"
                         />
                     </div>
-                    <div class="col-sm-12 col-lg-5 col-xl-4 mt-5">
+                    <div class="col-sm-12 col-lg-5 col-xl-4 mt-5" v-motion-slide-visible-left>
                         <div class="d-flex flex-column float-md-right justify-center align-items-center">
                             <v-date-picker 
                                 v-model="selectedDate" 
@@ -77,6 +77,7 @@
                     title="Select Time of Check-in/out"
                     confirmButtonText="Check Homestay Availability"
                     :confirmButtonClick="whatsappLink"
+                    v-motion-pop-visible
                 >   
                     <div class="row">
                         <div class="col d-flex flex-column">
@@ -93,7 +94,53 @@
                 </AppModal>
             </div>
             <div id="house-details" class="container pt-5" v-else>
-                <v-skeleton-loader type="card, paragraph"></v-skeleton-loader>
+                <div class="col-xs-12 col-xl-7 d-flex justify-center align-center">
+                    <v-carousel>
+                        <v-carousel-item>
+                            <v-skeleton-loader 
+                                type="image"
+                                height=100%
+                                width=100%
+                            >
+                            </v-skeleton-loader>
+                        </v-carousel-item>
+                    </v-carousel>
+                </div>
+                <div class="col-12 col-md-12 col-xl-5 mt-5 mt-lg-0">
+                    <v-skeleton-loader 
+                        type="
+                            subtitle, 
+                            paragraph, 
+                            subtitle, 
+                            sentences, 
+                            sentences, 
+                            sentences, 
+                            text, 
+                            text, 
+                            text, 
+                            text, 
+                            text
+                        "
+                    >
+                    </v-skeleton-loader>
+                </div>
+                <div class="col-sm-12 col-lg-7 col-xl-8 mt-5">
+                    <v-skeleton-loader 
+                        type="image"
+                        min-height="532"
+                        width=100%
+                    >
+                    </v-skeleton-loader>
+                </div>
+                <div class="col-sm-12 col-lg-5 col-xl-4 mt-5">
+                    <div class="d-flex flex-column float-md-right justify-center align-items-center">
+                        <v-skeleton-loader 
+                            type="date-picker"
+                            max-width="360"
+                        >
+                        </v-skeleton-loader>    
+                    </div>
+                </div>
             </div>
         </div>
     </div>
