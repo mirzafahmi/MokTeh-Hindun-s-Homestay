@@ -4,16 +4,16 @@
             <div class="container">
                     <div class="row w-100">
                         <div id="welcome-text" class="col-md-12 col-lg-7">
-                            <h1 class="title mt-5" v-motion-slide-visible-top>
+                            <h1 class="title mt-5" v-motion-pop>
                                 Welcome to Mokteh Hindun's Homestays
                             </h1>
-                            <h3 class="sub-title" v-motion-slide-visible-left>
+                            <h3 class="sub-title" v-motion-slide-left>
                                 Experience the unparalleled beauty of Terengganu as you immerse yourself in the authentic charm of our Homestay, where every moment becomes a delightful journey into the heart of this enchanting destination. Embrace the rich cultural tapestry, indulge in the vibrant local flavors, and create lasting memories surrounded by the breathtaking landscapes that make your stay a truly unforgettable exploration of Terengganu's allure.
                             </h3>
                         </div>
                         <div id="welcome-pic-list" class="col w-100">
                             <img 
-                                v-motion-slide-visible-right
+                                v-motion-fade
                                 id="bridge-pic" 
                                 class="welcome-pic" 
                                 src="/welcome_pic.jpg" 
@@ -21,7 +21,7 @@
                             />
 
                             <img 
-                                v-motion-pop-visible
+                                v-motion-fade
                                 id="keropok-pic" 
                                 class="welcome-pic" 
                                 src="/keropok.jpg" 
@@ -29,7 +29,7 @@
                             />
                             
                             <img
-                                v-motion-slide-visible-left
+                                v-motion-fade
                                 id="penyu-pic" 
                                 class="welcome-pic" 
                                 src="/penyu.jpg" 
@@ -43,13 +43,13 @@
             <div class="container">
                     <h1 
                         class="title text-center pt-5" 
-                        v-motion-slide-visible-top
+                        v-motion-pop-visible-once
                     >
                         What we can offer to you?
                     </h1>
                     <div class="row card-list">
                         <AppBenefits 
-                            v-motion-slide-visible-left
+                            v-motion-pop-visible-once
                             benefitsTitle="Clean"
                             benefitsText="Indulge in a stay where every corner breathes the freshness of immaculate upkeep."
                             benefitsIconViewBox="0 4 64 64"
@@ -59,7 +59,7 @@
                             gradientColor2="#FBB03B"
                         />
                         <AppBenefits 
-                            v-motion-pop-visible
+                            v-motion-pop-visible-once
                             benefitsTitle="Kampung-vibe"
                             benefitsText="Experience the allure of a traditional village within the heart of Kuala Terengganu."
                             benefitsIconViewBox="-2 -5 40 35"
@@ -69,7 +69,7 @@
                             gradientColor2="#1BFFFF"
                         />
                         <AppBenefits 
-                            v-motion-slide-visible-right
+                            v-motion-pop-visible-once
                             benefitsTitle="Near with city"
                             benefitsText="Enjoy a tranquil retreat just moments away from the vibrant pulse of the city."
                             benefitsIconViewBox="-5 0 64 55"
@@ -79,7 +79,7 @@
                             gradientColor2="#C2E9FB"
                         />
                         <AppBenefits 
-                            v-motion-slide-visible-left
+                            v-motion-pop-visible-once
                             benefitsTitle="Walkable distance to restaurant"
                             benefitsText="Satisfy your cravings with ease – our homestay is a stone's throw away from a variety of dining options."
                             :benefitsIcon="['M22 1.932v11.068h-2v-11c0-.552-.448-1-1-1s-1 .448-1 1v11h-2v-11.036c0-1.287-2-1.243-2-.033v11.069h-2v-10.99c0-1.363-2-1.313-2-.054v14.472c0 2.087 2 3.463 4 3.463v26.109c0 4 6 4 6 0v-26.108c2 0 4-1.662 4-3.227v-14.701c0-1.275-2-1.226-2-.032zm9 3.068v25h2v16c0 4 7 4 7 0v-41c0-5-9-5-9 0z']"
@@ -89,7 +89,7 @@
                             gradientColor2="#FFDDE1"
                         />
                         <AppBenefits
-                            v-motion-pop-visible
+                            v-motion-pop-visible-once
                             benefitsTitle="Flexible Check-in/Check-out"
                             benefitsText="Experience the convenience of flexible check-in and check-out options tailored to suit your travel schedule."
                             benefitsIconViewBox="-120 -90 1300 1300"
@@ -99,7 +99,7 @@
                             gradientColor2="#6FD6FF"
                         />
                         <AppBenefits 
-                            v-motion-slide-visible-right
+                            v-motion-pop-visible-once
                             benefitsTitle="Extended Stay Discounts"
                             benefitsText="Enjoy special discounts for extended stays, making our homestay an ideal choice for longer, more leisurely visits."
                             benefitsIconViewBox="-5 -10 125 125"
@@ -115,7 +115,7 @@
             <div class="container">
                 <h1 
                     class="title text-center pt-5"
-                    v-motion-slide-visible-top
+                    v-motion-pop-visible-once
                 >
                     Here are the list of our homestay
                 </h1>
@@ -134,7 +134,7 @@
                         :houseKettle="item.specs.kettle"
                         :houseIron="item.specs.iron"
                         :houseUrl="item.name"
-                        v-motion-pop-visible="index == 1 ? true : false"
+                        v-motion-pop-visible-once
                     />
                 </div>
                 <div id="housecard-list" class="row w-100 card-list" v-else>

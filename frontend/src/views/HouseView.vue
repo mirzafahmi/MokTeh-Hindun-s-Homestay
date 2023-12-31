@@ -2,12 +2,12 @@
     <div class="main-page">
         <div class="page-container">
             <div id="house-details" class="container pt-5" v-if="houseDetails">
-                <h1 class="title" v-motion-slide-visible-top>
+                <h1 class="title" v-motion-slide-top>
                     {{ transformName(houseDetails.name) }}
                 </h1>
                 <hr>
                 <div class="row gx-md-5 mb-3">
-                    <div class="col-xs-12 col-xl-7 d-flex justify-center align-center" v-motion-slide-visible-right>
+                    <div class="col-xs-12 col-xl-7 d-flex justify-center align-center" v-motion-slide-left>
                         <v-carousel>
                             <v-carousel-item 
                             v-for="(pic, index) in houseDetails.picture" 
@@ -21,7 +21,7 @@
                             </v-carousel-item>
                         </v-carousel>
                     </div>
-                    <div class="col-12 col-md-12 col-xl-5 mt-5 mt-lg-0" v-motion-slide-visible-left>
+                    <div class="col-12 col-md-12 col-xl-5 mt-5 mt-lg-0" v-motion-slide-right>
                         <AppHouseSpecCard
                             :housePax="houseDetails.pax"
                             :housePricing="houseDetails.pricing"
@@ -33,14 +33,14 @@
                             :houseIron="houseDetails.specs.iron"
                         />
                     </div>
-                    <div class="col-sm-12 col-lg-7 col-xl-8 mt-5" v-motion-slide-visible-right>
+                    <div class="col-sm-12 col-lg-7 col-xl-8 mt-5" v-motion-slide-left>
                         <AppGmap
                             :houseDetails="houseDetails"
                             :markerId="markerId"
                         />
                     </div>
-                    <div class="col-sm-12 col-lg-5 col-xl-4 mt-5" v-motion-slide-visible-left>
-                        <div class="d-flex flex-column float-md-right justify-center align-items-center">
+                    <div class="col-sm-12 col-lg-5 col-xl-4 mt-5">
+                        <div class="d-flex flex-column float-md-right justify-center align-items-center" v-motion-slide-right>
                             <v-date-picker 
                                 v-model="selectedDate" 
                                 :min="minDate"

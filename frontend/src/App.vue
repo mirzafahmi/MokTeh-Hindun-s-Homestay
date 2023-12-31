@@ -1,7 +1,7 @@
 <template>
   <v-app class="hidden">
     <SpeedInsights />
-    <AppNavbar v-motion-slide-top />
+    <AppNavbar />
     <router-view :key="$route.fullPath"/>
   </v-app>
 </template>
