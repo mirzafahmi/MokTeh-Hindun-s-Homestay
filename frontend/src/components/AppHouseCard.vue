@@ -156,7 +156,7 @@ const props = defineProps([
 </script>
 
 <style scoped>
-* {
+*:not(i) {
 	 margin: 0;
 	 padding: 0;
 	 font-family: 'Sofia', sans-serif;
