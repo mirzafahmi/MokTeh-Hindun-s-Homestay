@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://mok-teh-hindun-s-homestay.vercel.app/landing_page.png" alt="Website Landing Page">
+  <img src="/landing_page.PNG" alt="Website Landing Page">
 </p>
 
 <p align="center">

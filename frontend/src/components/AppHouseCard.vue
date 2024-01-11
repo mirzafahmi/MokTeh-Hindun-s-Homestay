@@ -73,7 +73,7 @@
 							<path fill="currentColor" d="M32,11h0a4,4,0,0,1,4,4v2a0,0,0,0,1,0,0H28a0,0,0,0,1,0,0V15A4,4,0,0,1,32,11Z" style="fill:none;stroke:#0a4870;stroke-linejoin:round;stroke-width:2px"/>
 						</svg>
 						<div>
-							<i v-if="houseKitchen" class="fa-solid fa-check"></i>
+							<i v-if="props.houseKitchen" class="fa-solid fa-check"></i>
 							<i v-else class="fa-solid fa-xmark"></i>
 						</div>
 					</div>
@@ -83,7 +83,7 @@
 							<path fill="currentColor" d="M9.329,59.727c0,2.271,1.995,4.111,4.454,4.111h36.438c2.457,0,4.451-1.84,4.451-4.111V24.593H9.329V59.727   z M16.847,34.061c0-1.02,0.691-1.847,1.544-1.847c0.854,0,1.545,0.827,1.545,1.847v8.287c0,1.02-0.691,1.846-1.545,1.846   c-0.853,0-1.544-0.826-1.544-1.846V34.061z"/>
 						</svg>
 						<div>
-							<i v-if="houseFridge" class="fa-solid fa-check"></i>
+							<i v-if="props.houseFridge" class="fa-solid fa-check"></i>
 							<i v-else class="fa-solid fa-xmark"></i>
 						</div>
 					</div>
@@ -95,7 +95,7 @@
 							<path fill="currentColor" d="M23,26H8a2,2,0,0,0-2,2v1H25V28A2,2,0,0,0,23,26ZM7,28a1,1,0,0,1,1-1H23a1,1,0,0,1,1,1H7Z"/>
 						</svg>
 						<div>
-							<i v-if="houseKettle" class="fa-solid fa-check"></i>
+							<i v-if="props.houseKettle" class="fa-solid fa-check"></i>
 							<i v-else class="fa-solid fa-xmark"></i>
 						</div>
 					</div>
@@ -106,7 +106,7 @@
 							<path fill="currentColor" class="cls-1" d="M17.65,12.91l-0.58-.45L12.1,29h8.24l0.13-.31A20.07,20.07,0,0,0,22,22C22,17.77,20.9,15.47,17.65,12.91Zm2,15.09H13.44L17.6,14.17C20.16,16.34,21,18.34,21,22A18.49,18.49,0,0,1,19.66,28Z"/>
 						</svg>
 						<div>
-							<i v-if="houseIron" class="fa-solid fa-check"></i>
+							<i v-if="props.houseIron" class="fa-solid fa-check"></i>
 							<i v-else class="fa-solid fa-xmark"></i>
 						</div>
 					</div>
