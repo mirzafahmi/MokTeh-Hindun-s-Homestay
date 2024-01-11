@@ -46,6 +46,9 @@ class HouseChoicesView(ModelView):
         },
     }
 
+    def can_delete(self, model):
+        return False
+
 admin = Admin(index_view=MyAdminIndexView())
 
 admin.add_view(HouseChoicesView(HouseChoice, db.session))

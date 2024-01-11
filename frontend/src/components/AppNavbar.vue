@@ -2,10 +2,11 @@
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <router-link 
-      class="navbar-brand"
-      to="/"
+        class="navbar-brand" 
+        to="/"
+        @click="closeDropdown" 
       >
-      Mokteh Hindun™
+        Mokteh Hindun™
       </router-link>
       <button
         class="navbar-toggler"
@@ -15,17 +16,18 @@
         aria-controls="navbarNavDropdown"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        @click="toggleDropdown"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse" :class="{ show: isDropdownOpen }" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <router-link 
-            @click="closeDropdown"
-            class="nav-link" 
-            :class="{ active: isRoute('/') }" 
-            to="/"
+              @click="closeDropdown" 
+              class="nav-link" 
+              :class="{ active: isRoute('/') }" 
+              to="/"
             >
               Home
             </router-link>
@@ -42,26 +44,17 @@
             </a>
             <ul class="dropdown-menu">
               <li @click="closeDropdown">
-                <router-link 
-                class="dropdown-item" 
-                to="/rumah_kayu"
-                >
+                <router-link class="dropdown-item" to="/rumah_kayu">
                   Rumah Kayu
                 </router-link>
               </li>
               <li @click="closeDropdown">
-                <router-link 
-                class="dropdown-item" 
-                to="/rumah_batu"
-                >
+                <router-link class="dropdown-item" to="/rumah_batu">
                   Rumah Batu
                 </router-link>
               </li>
               <li @click="closeDropdown">
-                <router-link 
-                class="dropdown-item" 
-                to="/rumah_kecik"
-                >
+                <router-link class="dropdown-item" to="/rumah_kecik">
                   Rumah Kecik
                 </router-link>
               </li>
@@ -69,9 +62,10 @@
           </li>
           <li class="nav-item">
             <router-link 
-            class="nav-link" 
-            :class="{ active: isRoute('/visit') }"
-            to="/visit"
+              class="nav-link" 
+              :class="{ active: isRoute('/visit') }" 
+              to="/visit"
+              @click="closeDropdown"
             >
               Places To Visit
             </router-link>
@@ -81,7 +75,6 @@
     </div>
   </nav>
 </template>
-
 
 <script setup>
 import { ref } from 'vue';
@@ -107,7 +100,6 @@ function closeDropdown() {
 }
 </script>
 
-
 <style scoped>
 nav {
   background-color: var(--primary);
@@ -119,6 +111,6 @@ nav {
 }
 
 .active {
-  border-bottom: 1px solid black
+  border-bottom: 1px solid black;
 }
 </style>

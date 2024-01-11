@@ -1,5 +1,5 @@
 <template>
-<div class="col-lg-4 col">
+<div class="col-lg-4 col custom-margin">
 	<ul class="d-flex align-items-center justify-content-center">
 		<li 
 		class="booking-card" 
@@ -314,6 +314,12 @@ hr {
 @media (min-width: 1400px) {
 	ul .booking-card {
 		flex: 0 0 350px;
+	}
+}
+
+@media (max-width: 576px) {
+	.custom-margin {
+		margin-left: 7%;
 	}
 }
 </style>
