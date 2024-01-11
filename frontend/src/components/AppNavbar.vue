@@ -22,6 +22,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <router-link 
+            @click="closeDropdown"
             class="nav-link" 
             :class="{ active: isRoute('/') }" 
             to="/"
@@ -40,7 +41,7 @@
               Homestays List
             </a>
             <ul class="dropdown-menu">
-              <li>
+              <li @click="closeDropdown">
                 <router-link 
                 class="dropdown-item" 
                 to="/rumah_kayu"
@@ -48,7 +49,7 @@
                   Rumah Kayu
                 </router-link>
               </li>
-              <li>
+              <li @click="closeDropdown">
                 <router-link 
                 class="dropdown-item" 
                 to="/rumah_batu"
@@ -56,7 +57,7 @@
                   Rumah Batu
                 </router-link>
               </li>
-              <li>
+              <li @click="closeDropdown">
                 <router-link 
                 class="dropdown-item" 
                 to="/rumah_kecik"
@@ -81,10 +82,13 @@
   </nav>
 </template>
 
+
 <script setup>
+import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
+const isDropdownOpen = ref(false);
 
 function isRoute(path) {
   return route.path === path;
@@ -93,10 +97,18 @@ function isRoute(path) {
 function isDropdownActive(routes) {
   return routes.some((route) => isRoute(route));
 }
+
+function toggleDropdown() {
+  isDropdownOpen.value = !isDropdownOpen.value;
+}
+
+function closeDropdown() {
+  isDropdownOpen.value = false;
+}
 </script>
 
-<style scoped>
 
+<style scoped>
 nav {
   background-color: var(--primary);
   box-shadow: rgba(0, 0, 0, 0.45) 0px 20px 20px -20px;

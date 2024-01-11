@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./landing_page.png" alt="Website Landing Page">
+  <img src="https://mok-teh-hindun-s-homestay.vercel.app/landing_page.png" alt="Website Landing Page">
 </p>
 
 <p align="center">
@@ -52,3 +52,4 @@ Embarking on the journey of mastering full-stack application development, I leve
 ## Disclaimer
 - The images used on this website are for educational purposes and do not accurately represent the actual homestay. They are courtesy of https://unsplash.com.
 - For an optimal experience, we recommend using a desktop browser.
+- Note that sometimes it will have slight delay (~15 seconds) for some content to load due to free tier deployment service.

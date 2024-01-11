@@ -4,7 +4,7 @@
             <div class="container">
                 <h1 
                     class="title mt-5" 
-                    v-motion-slide-visible-top
+                    v-motion-pop
                 >
                     Visit here while you at our homestay
                 </h1>
@@ -18,7 +18,7 @@
                             cardLocation="8 KM from the location"
                         />
                     </div>
-                    <div class="row" v-motion-slide-right>
+                    <div class="row" v-motion-slide-left>
                         <AppVisitCard
                             markerId="3"
                             cardPicture="/muzium.jpg"
@@ -36,7 +36,7 @@
                             cardLocation="11.7 KM from the location"
                         />
                     </div>
-                    <div class="row" v-motion-slide-right>
+                    <div class="row" v-motion-slide-left>
                         <AppVisitCard
                             markerId="5"
                             cardPicture="/pasar_payang.jpeg"

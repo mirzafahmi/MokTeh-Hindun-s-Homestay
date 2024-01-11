@@ -94,7 +94,15 @@
                 </AppModal>
             </div>
             <div id="house-details" class="container pt-5" v-else>
-                <div class="col-xs-12 col-xl-7 d-flex justify-center align-center">
+                <h1 class="title">
+                    <v-skeleton-loader 
+                        type="subtitle"
+                        id="skeleton-title"
+                    />
+                </h1>
+                <hr>
+                <div class="row gx-md-5 mb-3">
+                    <div class="col-xs-12 col-xl-7 d-flex justify-center align-center">
                     <v-carousel>
                         <v-carousel-item>
                             <v-skeleton-loader 
@@ -141,6 +149,8 @@
                         </v-skeleton-loader>    
                     </div>
                 </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -267,6 +277,10 @@ onMounted(() => {
     #whatsApp-btn{
         width: 360px;
         color: white;
+    }
+
+    #skeleton-title {
+        background: transparent;
     }
 
     @media (max-width: 576px) {
