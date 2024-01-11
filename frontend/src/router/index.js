@@ -36,6 +36,9 @@ router.beforeEach((to, from, next) => {
     const thresholdWidth = 991;
     const requiresOverflowHidden = to.path === '/' && window.innerWidth >= thresholdWidth;
     document.documentElement.style.overflow = requiresOverflowHidden ? 'auto' : 'auto';
+    
+    window.scrollTo(0, 0);
+
     next();
 });
 

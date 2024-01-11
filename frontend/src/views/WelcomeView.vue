@@ -210,13 +210,13 @@ const backendServer = useServerStore().backEndServer
     }
 
     #welcome-pic-list {
-        margin-top: 14%;
+        margin-top: 10vh;
     }
 
     .welcome-pic {
-        height: 400px;
+        height: 420px;
         width: 300px;
-        border-radius: 50px;
+        border-radius: 25px;
     }
 
     .welcome-pic:not(:first-child) {
@@ -269,11 +269,15 @@ const backendServer = useServerStore().backEndServer
         }
 
         #welcome-text {
-            margin-top: 30%;
+            margin-top: 25vh;
         }
     }
 
-    @media (max-width: 991px) {        
+    @media (max-width: 991px) {      
+        #page-1, #page-2, #page-3, #page-4 {
+            min-height: max(100vh, 1200px);
+        }
+
         #welcome-text {
         margin-top: 20px;
         min-height: 0px;
@@ -325,6 +329,10 @@ const backendServer = useServerStore().backEndServer
     }
 
     @media (max-width: 768px) {
+        #page-1, #page-2, #page-3, #page-4 {
+            min-height: max(100vh, 900px);
+        }
+        
         #welcome-text {
         margin-top: 10px;
         min-height: 0px;
@@ -366,7 +374,7 @@ const backendServer = useServerStore().backEndServer
 
     @media (max-width: 576px) {
         #page-1, #page-2, #page-3, #page-4 {
-            min-height: max(100vh, 900px);
+            min-height: max(100vh, 910px);
         }
 
         #welcome-text {
@@ -407,6 +415,17 @@ const backendServer = useServerStore().backEndServer
         #penyu-pic {    
             rotate: 10deg;
             right: 10%;
+        }
+    }
+
+    @media (min-width: 1000px) and (max-height: 1081px) {
+        .card-list {
+            margin-top: 7vh;
+        }
+
+        .welcome-pic {
+            height: 350px;
+            width: 250px;
         }
     }
 </style>

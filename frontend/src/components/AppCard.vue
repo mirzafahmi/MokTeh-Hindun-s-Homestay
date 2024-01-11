@@ -91,4 +91,10 @@ function generateUniqueId() {
     }
         
     }
+
+    @media (max-height: 1081px) {
+        .card {
+            margin-bottom: 5vh;
+        }
+    }
 </style>
