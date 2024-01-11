@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/landing_page.PNG" alt="Website Landing Page">
+  <img src="./frontend/public/landing_page.PNG" alt="Website Landing Page">
 </p>
 
 <p align="center">
