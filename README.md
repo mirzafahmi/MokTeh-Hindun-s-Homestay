@@ -44,8 +44,9 @@ Embarking on the journey of mastering full-stack application development, I leve
   - Frontend framework: Vue.js (VueCLI)
   - UI framework: Vuetify
   - State-management: Pinia.js
-  - Backend: Flask (Python)
-  - Database: SQLite
+  - Backend: Python
+  - Backend framework: Flask
+  - Database: Postgresql
   - Deployment Service: Render (backend), Vercel (frontend)
 
 

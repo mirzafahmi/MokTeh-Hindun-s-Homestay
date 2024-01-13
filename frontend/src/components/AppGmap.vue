@@ -105,7 +105,7 @@ onMounted(async () => {
             window.scrollTo(0, document.body.scrollHeight);
         } else {
             // Smaller screens: Scroll to a specific height from the bottom
-            const specificHeight = 1300; // Set your specific height value
+            const specificHeight = 1300; 
             window.scrollTo(0, document.body.scrollHeight - specificHeight);
         }
     }
@@ -156,7 +156,6 @@ function calculateAndDisplayRoute(index, destination) {
 
 // Function to get the content for the info window
 function getDirectionsInfoContent(route) {
-  // Customize this based on your needs
   const distance = route.legs[0].distance.text;
   const duration = route.legs[0].duration.text;
 

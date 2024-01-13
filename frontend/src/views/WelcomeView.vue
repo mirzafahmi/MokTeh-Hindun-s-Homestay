@@ -42,7 +42,7 @@
         <div id="page-2" class="page-container">
             <div class="container">
                     <h1 
-                        class="title text-center pt-5" 
+                        class="title text-center pt-15" 
                         v-motion-pop-visible-once
                     >
                         What we can offer to you?
@@ -114,7 +114,7 @@
         <div id="page-3" class="page-container">
             <div class="container">
                 <h1 
-                    class="title text-center pt-5"
+                    class="title text-center pt-15"
                     v-motion-pop-visible-once
                 >
                     Here are the list of our homestay
